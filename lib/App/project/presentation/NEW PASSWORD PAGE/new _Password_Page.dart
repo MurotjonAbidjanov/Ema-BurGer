@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/App/widget/textfild_widget.dart';
+
+import '../../widget/textfild_widget.dart';
 
 class NewPasswordPage extends StatefulWidget {
   const NewPasswordPage({Key? key}) : super(key: key);

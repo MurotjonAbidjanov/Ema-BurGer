@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/App/widget/textfild_widget.dart';
+import 'package:shop_app/App/project/widget/textfild_widget.dart';
 
 class BottomSheetSingUpWidget extends StatefulWidget {
   BottomSheetSingUpWidget({Key? key}) : super(key: key);
