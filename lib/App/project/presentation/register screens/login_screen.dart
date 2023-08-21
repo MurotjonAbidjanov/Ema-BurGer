@@ -1,11 +1,11 @@
-import 'dart:developer';
+
 
 import 'package:flutter/material.dart';
 
-import 'package:shop_app/App/project/presentation/NEW%20PASSWORD%20PAGE/new%20_Password_Page.dart';
-
+import '../../../../project/cart/cart_page.dart';
 import '../../widget/bottom_sheet_sing_up_widget.dart';
 import '../../widget/textfild_widget.dart';
+import '../NEW PASSWORD PAGE/new _Password_Page.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -186,18 +186,24 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 25,
             ),
             // sign in button
-            Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 110, vertical: 14),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Color(0xffFF785B)),
-              child: const Text(
-                'Sign In',
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => CartPage()));
+              },
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 110, vertical: 14),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Color(0xffFF785B)),
+                child: const Text(
+                  'Sign In',
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white),
+                ),
               ),
             ),
             const SizedBox(

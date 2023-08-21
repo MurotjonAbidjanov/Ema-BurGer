@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/App/project/presentation/screens/order_screen.dart';
 
-import 'App/project/wellecom_page/wellcom_page.dart';
 
 void main(List<String> args) {
   runApp(ShopAppMobile());

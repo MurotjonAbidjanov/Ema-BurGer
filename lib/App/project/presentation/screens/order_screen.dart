@@ -38,55 +38,274 @@ class OrderScreen extends StatelessWidget {
                   top: Radius.circular(21),
                 ),
               ),
-              child: Column(
-                children: [
-                  // Description
-                  Padding(
-                    padding: EdgeInsets.only(top: 41, left: 20, right: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        //Sub-Description
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Description',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Color(
-                                  0xff5E5959,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Description
+                    Padding(
+                      padding: EdgeInsets.only(top: 41, left: 20, right: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          //Sub-Description
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Description',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(
+                                    0xff5E5959,
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                              '''
-Our fried rice is made from
-the finest ingredients and veggies.
-Every single dish is made 
-with fresh vegetables. 
-Each plate is served with our 
-signature chicken and a free''',
-                              style: TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.w300,
-                                color: Color(0xff5E5959),
+                              SizedBox(
+                                height: 8,
                               ),
-                            )
-                          ],
-                        ),
-                        //Rating-Description
-                        Column(
-                          children: [],
-                        ),
-                      ],
+                              Container(
+                                height: 99,
+                                width: 137,
+                                child: Text(
+                                  'Our fried rice is made from the finest ingredients and veggies.Every single dish is made with fresh vegetables. Each plate is served with oursignature chicken and a free',
+                                  style: TextStyle(
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xff5E5959),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          //Rating-Description
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    CupertinoIcons.star_fill,
+                                    color: Colors.deepOrange,
+                                    size: 16,
+                                  ),
+                                  Icon(
+                                    CupertinoIcons.star_fill,
+                                    color: Colors.deepOrange,
+                                    size: 16,
+                                  ),
+                                  Icon(
+                                    CupertinoIcons.star_fill,
+                                    color: Colors.deepOrange,
+                                    size: 16,
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                'Latest Reviews',
+                                style: TextStyle(
+                                  color: Color(0xff0F0C0C),
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 4,
+                              ),
+                              Text(
+                                'Sarah Ofila',
+                                style: TextStyle(
+                                  color: Color(0xff0F0C0C),
+                                  fontSize: 6,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 3,
+                              ),
+                              Text(
+                                'Great Meal but delivery was a bit late',
+                                style: TextStyle(
+                                    color: Color(0xff0F0C0C),
+                                    fontSize: 7,
+                                    fontWeight: FontWeight.w300,
+                                    fontStyle: FontStyle.italic),
+                              ),
+                              SizedBox(
+                                height: 3,
+                              ),
+                              Text(
+                                '3 mins ago',
+                                style: TextStyle(
+                                    color: Color(0xff0F0C0C),
+                                    fontSize: 5,
+                                    fontWeight: FontWeight.w300,
+                                    fontStyle: FontStyle.italic),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                    // Ingredients
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Ingredients',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w900,
+                                color: Color(0xff5E5959)),
+                          ),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.vertical,
+                            child: Row(
+                              children: [
+                                Container(
+                                  height: 55,
+                                  width: 73,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    color: Colors.red,
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image:
+                                          AssetImage('assets/images/rice.png'),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  height: 55,
+                                  width: 73,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    color: Colors.red,
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image:
+                                          AssetImage('assets/images/rice.png'),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10, top: 12),
+                      child: Text(
+                        'Additions',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w900,
+                            color: Color(0xff5E5959)),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Center(
+                      child: Container(
+                        height: 34,
+                        width: 322,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.deepOrange),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10, right: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Meat',
+                                style: TextStyle(fontSize: 13),
+                              ),
+                              Icon(
+                                CupertinoIcons.chevron_down,
+                                color: Colors.deepOrange,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Center(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: Container(
+                          height: 67,
+                          width: 322,
+                          decoration: BoxDecoration(
+                              color: Colors.deepOrange,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  '\$ 56',
+                                  style: TextStyle(
+                                      fontSize: 20, color: Colors.white),
+                                ),
+                                Container(
+                                  width: 125,
+                                  height: 34,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: Colors.white,
+                                      ),
+                                      borderRadius: BorderRadius.circular(30)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 10, right: 10),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Icon(
+                                          CupertinoIcons.minus,
+                                          color: Colors.white,
+                                        ),
+                                        Text(
+                                          '1',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20),
+                                        ),
+                                        Icon(
+                                          CupertinoIcons.plus,
+                                          color: Colors.white,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  child: Icon(
+                                    CupertinoIcons.cart,
+                                    color: Colors.deepOrange,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -166,7 +385,7 @@ signature chicken and a free''',
                       backgroundColor: Colors.white,
                       maxRadius: 21,
                       child: Icon(
-                        Icons.favorite_border_outlined,
+                        CupertinoIcons.heart,
                         color: Colors.deepOrange,
                         size: 26,
                       ),
