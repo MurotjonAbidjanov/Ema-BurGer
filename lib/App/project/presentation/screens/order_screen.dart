@@ -31,7 +31,7 @@ class OrderScreen extends StatelessWidget {
             right: 0,
             child: Container(
               width: 420,
-              height: 400,
+              height: MediaQuery.of(context).size.height * 1,
               decoration: const BoxDecoration(
                 color: Color(0xffFBEDEA),
                 borderRadius: BorderRadius.vertical(
@@ -39,6 +39,8 @@ class OrderScreen extends StatelessWidget {
                 ),
               ),
               child: SingleChildScrollView(
+                keyboardDismissBehavior:
+                    ScrollViewKeyboardDismissBehavior.onDrag,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -80,74 +82,87 @@ class OrderScreen extends StatelessWidget {
                             ],
                           ),
                           //Rating-Description
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Row(
-                                children: [
-                                  Icon(
-                                    CupertinoIcons.star_fill,
-                                    color: Colors.deepOrange,
-                                    size: 16,
-                                  ),
-                                  Icon(
-                                    CupertinoIcons.star_fill,
-                                    color: Colors.deepOrange,
-                                    size: 16,
-                                  ),
-                                  Icon(
-                                    CupertinoIcons.star_fill,
-                                    color: Colors.deepOrange,
-                                    size: 16,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                'Latest Reviews',
-                                style: TextStyle(
-                                  color: Color(0xff0F0C0C),
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w900,
+                          Container(
+                            width: 131,
+                            height: 119,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                SizedBox(
+                                  height: 5,
                                 ),
-                              ),
-                              SizedBox(
-                                height: 4,
-                              ),
-                              Text(
-                                'Sarah Ofila',
-                                style: TextStyle(
-                                  color: Color(0xff0F0C0C),
-                                  fontSize: 6,
-                                  fontWeight: FontWeight.w900,
+                                Text(
+                                  'Latest Reviews',
+                                  style: TextStyle(
+                                    color: Color(0xff0F0C0C),
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w900,
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 3,
-                              ),
-                              Text(
-                                'Great Meal but delivery was a bit late',
-                                style: TextStyle(
+                                Divider(
+                                  color: Colors.black,
+                                  thickness: 1.1,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Icon(
+                                      CupertinoIcons.star_fill,
+                                      color: Colors.deepOrange,
+                                      size: 16,
+                                    ),
+                                    Icon(
+                                      CupertinoIcons.star_fill,
+                                      color: Colors.deepOrange,
+                                      size: 16,
+                                    ),
+                                    Icon(
+                                      CupertinoIcons.star_fill,
+                                      color: Colors.deepOrange,
+                                      size: 16,
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 4,
+                                ),
+                                Text(
+                                  'Sarah Ofila',
+                                  style: TextStyle(
                                     color: Color(0xff0F0C0C),
-                                    fontSize: 7,
-                                    fontWeight: FontWeight.w300,
-                                    fontStyle: FontStyle.italic),
-                              ),
-                              SizedBox(
-                                height: 3,
-                              ),
-                              Text(
-                                '3 mins ago',
-                                style: TextStyle(
-                                    color: Color(0xff0F0C0C),
-                                    fontSize: 5,
-                                    fontWeight: FontWeight.w300,
-                                    fontStyle: FontStyle.italic),
-                              ),
-                            ],
+                                    fontSize: 6,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 3,
+                                ),
+                                Text(
+                                  'Great Meal but delivery was a bit late',
+                                  style: TextStyle(
+                                      color: Color(0xff0F0C0C),
+                                      fontSize: 7,
+                                      fontWeight: FontWeight.w300,
+                                      fontStyle: FontStyle.italic),
+                                ),
+                                SizedBox(
+                                  height: 3,
+                                ),
+                                Text(
+                                  '3 mins ago',
+                                  style: TextStyle(
+                                      color: Color(0xff0F0C0C),
+                                      fontSize: 5,
+                                      fontWeight: FontWeight.w300,
+                                      fontStyle: FontStyle.italic),
+                                ),
+                                Divider(
+                                  color: Colors.black,
+                                  thickness: 1.1,
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -247,6 +262,14 @@ class OrderScreen extends StatelessWidget {
                           width: 322,
                           decoration: BoxDecoration(
                               color: Colors.deepOrange,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.shade500,
+                                  spreadRadius: 1,
+                                  blurRadius: 9,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ],
                               borderRadius: BorderRadius.circular(20)),
                           child: Padding(
                             padding: const EdgeInsets.only(left: 10, right: 10),
